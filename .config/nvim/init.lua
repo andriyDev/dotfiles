@@ -1,6 +1,7 @@
 require("config.lazy")
 
 require("format_on_save")
+require("config_cmd")
 
 vim.opt.scrolloff = 10
 vim.opt.cc = { 100 }
