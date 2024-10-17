@@ -16,4 +16,5 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.keymap.set('', '<C-p>', '<cmd>Files<cr>')
+vim.keymap.set('', 'K', function() vim.lsp.buf.hover() end)
 
