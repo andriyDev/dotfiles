@@ -1,5 +1,7 @@
 require("config.lazy")
 
+require("format_on_save")
+
 vim.opt.scrolloff = 10
 vim.opt.cc = { 100 }
 vim.opt.wrap = false
