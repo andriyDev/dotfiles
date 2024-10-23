@@ -23,6 +23,7 @@ vim.keymap.set('', '<A-C-p>', '<cmd>AllFiles<cr>')
 vim.keymap.set('', '<C-S-p>', '<cmd>Commands<cr>')
 vim.keymap.set('', 'K', function() vim.lsp.buf.hover() end)
 vim.keymap.set('', '<F12>', function() vim.lsp.buf.definition() end)
+vim.keymap.set('', '<C-Space>', function() vim.diagnostic.open_float() end)
 
 vim.keymap.set({'n', 'v', 'i'}, '<C-Tab>', '<cmd>tabnext<cr>')
 vim.keymap.set({'n', 'v', 'i'}, '<C-S-Tab>', '<cmd>tabprevious<cr>')
