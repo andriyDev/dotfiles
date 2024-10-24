@@ -1,0 +1,128 @@
+@define-color modules-background rgba(106, 92, 122, 0.5);
+@import "mocha.css";
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Fantasque Sans Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/*
+.modules-left,.modules-right {
+    background-color: @modules-background;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+*/
+
+/* Give the following modules a rounded background */
+#workspaces,#status,#tray {
+    background-color: @modules-background;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px 0px;
+    margin-right: 20px;
+    box-shadow: 2px 2px 2px 1px black;
+}
+
+#status * {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Workspace styling */
+
+#workspaces {
+    margin-left: 20px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+/* Tray styling */
+#tray {
+    border-radius: 20px;
+    padding: 0px 10px;
+}
+
+/* Status modules styling */
+
+/* Nice spacing for everything. */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding: 0px 5px;
+    border-radius: 20px;
+}
+
+/* Per-module colors */
+
+#pulseaudio {
+    color: @maroon;
+}
+
+#backlight {
+    color: @yellow;
+}
+
+#battery {
+    color: white;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+}
+
+#clock {
+    color: @blue;
+}
+
+#idle_inhibitor {
+    background-color: rgba(40, 40, 40, 0.5);
+}
+
+#idle_inhibitor.activated {
+    background-color: white;
+    color: black;
+}
+
