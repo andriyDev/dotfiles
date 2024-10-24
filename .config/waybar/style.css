@@ -14,15 +14,6 @@ window#waybar {
     transition-duration: .5s;
 }
 
-/*
-.modules-left,.modules-right {
-    background-color: @modules-background;
-    border-radius: 20px;
-    padding: 5px;
-    margin: 10px;
-}
-*/
-
 /* Give the following modules a rounded background */
 #workspaces,#status,#tray {
     background-color: @modules-background;
