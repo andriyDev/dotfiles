@@ -1,4 +1,4 @@
-@define-color modules-background rgba(106, 92, 122, 0.5);
+@define-color modules-background @surface0;
 @import "mocha.css";
 
 * {
