@@ -1,0 +1,12 @@
+[Unit]
+Description=Applet to show NetworkManager state
+Documentation=man:nm-applet(1)
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nm-applet
+
+[Install]
+WantedBy=sway-session.target
+

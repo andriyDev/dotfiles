@@ -1,0 +1,10 @@
+[Unit]
+Description = "wl-distore"
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.cargo/bin/wl-distore
+
+[Install]
+WantedBy=sway-session.target

@@ -1,0 +1,11 @@
+[Unit]
+Description="Daemon for playerctl"
+Documentation=man:playerctld(1)
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/playerctld
+
+[Install]
+WantedBy=sway-session.target
