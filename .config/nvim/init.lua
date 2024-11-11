@@ -18,6 +18,8 @@ vim.opt.wildmode = 'list:longest'
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.keymap.set('', '<A-z>', '<cmd>set wrap!<cr>')
+
 vim.keymap.set('', '<C-p>', '<cmd>Files<cr>')
 vim.keymap.set('', '<A-C-p>', '<cmd>AllFiles<cr>')
 vim.keymap.set('', '<C-S-p>', '<cmd>Commands<cr>')
