@@ -24,6 +24,12 @@ return {
             },
           },
           path_display = function(opts, path)
+            local cwd = vim.fn.getcwd()
+            local path_without_cwd = path
+            if path:sub(1, cwd:len()) == cwd then
+              path = path:sub(cwd:len() + 2)
+            end
+
             -- We'd prefer to just use telescope.utils.path_tail, but we need to wait for
             -- https://github.com/nvim-telescope/telescope.nvim/pull/3127
             local tail = path:match("^.*[/\\]([^/\\]*)$")
@@ -43,7 +49,19 @@ return {
             return string.format("%s (%s)", tail, head)
           end,
         },
+        extensions = {
+          frecency = {
+            show_filter_column = false,
+          }
+        },
       }
+    end,
+  },
+  {
+    'nvim-telescope/telescope-frecency.nvim',
+    version = '*',
+    config = function()
+      require('telescope').load_extension('frecency')
     end,
   },
 }
