@@ -1,0 +1,21 @@
+#!/usr/bin/fish
+
+set step 10
+
+set volume (pactl get-sink-volume @DEFAULT_SINK@ | head -n 1 | awk '{ printf "%s", $5 }' | sed 's/%$//')
+
+switch $argv[1]
+  case up
+    if test $volume -gt (math 100 - $step)
+      pactl set-sink-volume @DEFAULT_SINK@ 100%
+    else
+      pactl set-sink-volume @DEFAULT_SINK@ +$step%
+    end
+  case down
+    pactl set-sink-volume @DEFAULT_SINK@ -$step%
+  case '*'
+    echo "Invalid option \"$1\". Expected: up, down"
+    exit 1
+end
+
+pactl get-sink-volume @DEFAULT_SINK@ | head -n 1 | awk '{ printf "%s", $5 }' | sed 's/%$//'

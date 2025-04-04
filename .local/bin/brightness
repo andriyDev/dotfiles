@@ -1,0 +1,22 @@
+#!/usr/bin/fish
+
+set step 10
+
+set brightness (light)
+
+switch $argv[1]
+  case up
+    light -A $step
+  case down
+    if test $brightness -le $step
+      light -S 1
+    else
+      light -U $step
+    end
+  case '*'
+    echo "Invalid option \"$1\". Expected: up, down"
+    exit 1
+end
+
+light
+
