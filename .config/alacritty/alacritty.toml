@@ -1,0 +1,19 @@
+
+[general]
+import = ["alacritty-theme/themes/gruvbox_dark.toml"]
+
+[terminal.shell]
+program = "/usr/bin/fish"
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[font]
+size = 11.0
+normal = { family = "DejaVu Sans Mono" }
+
+[window.padding]
+x = 4
+y = 4
+
